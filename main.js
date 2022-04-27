@@ -18,7 +18,8 @@ const todoParent = document.querySelector('.todos');
 // functions
 
 const addTodo = function () {
-  todoParent.innerHTML += `<div
+  if (insertInput.value !== '' && insertInput.value !== null) {
+    todoParent.innerHTML += `<div
     class="todo flex justify-between items-center border border-orange-500 px-1" style="height:26px;"
   >
     <ul class="todo-list">
@@ -37,6 +38,7 @@ const addTodo = function () {
       />
     </span>
   </div>`;
+  }
 };
 
 // eventlisteners
