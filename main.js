@@ -1,7 +1,9 @@
 import './style.css';
 import './index.scss';
+import './custom.css';
 import foo from './images';
 import bar from './images';
+import removeTodo from './delete_todo.js';
 
 // selectors
 
@@ -9,8 +11,10 @@ const insertTodoBtn = document.querySelector('.add-btn');
 const insertInput = document.querySelector('.insert--input');
 const todoParent = document.querySelector('.todos');
 
+// const deleteTodo = document.querySelector('.del-todo');
+// const doneTodo = document.querySelector('.done-todo');
+
 // functions
-console.log();
 
 const addTodo = function () {
   todoParent.innerHTML += `<div
@@ -21,12 +25,12 @@ const addTodo = function () {
     </ul>
     <span class="actions flex gap-x-1">
       <img
-        class="w-5 h-4 cursor-pointer"
+        class="done-todo w-5 h-4 cursor-pointer"
         src= ${foo.foo}
         alt="completed"
       />
       <img
-        class="w-4 h-4 cursor-pointer"
+        class="del-todo w-4 h-4 cursor-pointer"
         src=${bar.bar}
         alt="delete"
       />
@@ -38,4 +42,10 @@ const addTodo = function () {
 
 insertTodoBtn.addEventListener('click', () => {
   addTodo();
+});
+
+// deleteTodo.addEventListener('click', removeTodo);
+
+todoParent.addEventListener('click', (e) => {
+  removeTodo.removeTodo(e.target);
 });
