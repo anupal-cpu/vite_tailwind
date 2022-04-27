@@ -14,7 +14,7 @@ console.log();
 
 const addTodo = function () {
   todoParent.innerHTML += `<div
-    class="todo flex justify-between items-center border border-orange-500 px-1"
+    class="todo flex justify-between items-center border border-orange-500 px-1" style="height:26px;"
   >
     <ul class="todo-list">
       <li>${insertInput.value}</li>
