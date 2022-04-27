@@ -1,10 +1,13 @@
 // delete todo function
 
 const removeTodo = function (target) {
+  const parentDel = target.parentElement.parentElement;
+
   if (target.classList.contains('del-todo')) {
-    target.parentElement.parentElement.classList.add('fade');
-    target.parentElement.parentElement.addEventListener('transitionend', () => {
-      target.parentElement.parentElement.remove();
+    parentDel.classList.remove('dim');
+    parentDel.classList.add('fade');
+    parentDel.addEventListener('transitionend', () => {
+      parentDel.remove();
     });
   }
 };

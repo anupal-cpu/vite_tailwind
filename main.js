@@ -4,6 +4,7 @@ import './custom.css';
 import foo from './images';
 import bar from './images';
 import removeTodo from './delete_todo.js';
+import completedTodo from './done_todo.js';
 
 // selectors
 
@@ -21,7 +22,7 @@ const addTodo = function () {
     class="todo flex justify-between items-center border border-orange-500 px-1" style="height:26px;"
   >
     <ul class="todo-list">
-      <li>${insertInput.value}</li>
+      <li class="list-item">${insertInput.value}</li>
     </ul>
     <span class="actions flex gap-x-1">
       <img
@@ -40,12 +41,20 @@ const addTodo = function () {
 
 // eventlisteners
 
+// add todo
+
 insertTodoBtn.addEventListener('click', () => {
   addTodo();
 });
 
-// deleteTodo.addEventListener('click', removeTodo);
+// delete todo
 
 todoParent.addEventListener('click', (e) => {
   removeTodo.removeTodo(e.target);
+});
+
+// complete todo
+
+todoParent.addEventListener('click', (e) => {
+  completedTodo.completedTodo(e.target);
 });
