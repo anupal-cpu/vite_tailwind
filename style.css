@@ -19,10 +19,37 @@
 }
 
 .container {
-  width: 40rem;
-  height: 30rem;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(5px);
   filter: blur();
   font-family: 'helvetica-1';
+}
+
+.interection-area {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  filter: blur();
+  font-family: 'helvetica-1';
+}
+
+.current-score {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  filter: blur();
+  font-family: 'helvetica-1';
+}
+
+.high-score {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  filter: blur();
+  font-family: 'helvetica-1';
+}
+
+.restart-btn {
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(255, 229, 168, 1) 0%,
+    rgba(251, 174, 222, 1) 100.7%
+  );
 }
