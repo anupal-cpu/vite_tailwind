@@ -8,55 +8,18 @@
     <title>Vite App</title>
   </head>
   <body>
-    <main class="all--content flex justify-center items-center w-full h-screen">
-      <div class="w-60 h-80 container flex flex-col border border-slate-600">
-        <header class="heading w-full flex justify-center pt-2 items-center">
-          <h1 class="heading--text text-orange-500">TODO</h1>
+    <main
+      class="all--content flex justify-center items-center w-full h-screen"
+      style="
+        background-image: url(./images/default.jpg);
+        background-position: center;
+        background-size: cover;
+      "
+    >
+      <div class="container h-80 w-60 bg-white rounded-md">
+        <header class="heading">
+          <h1 class="header--text">TODAY</h1>
         </header>
-        <!-- todos area -->
-        <section class="all--todo relative h-72 overflow-hidden">
-          <div class="todos flex flex-col px-2 pt-3 gap-y-2">
-            <!-- one todo -->
-            <div
-              class="todo flex justify-between items-center border border-orange-500 px-1"
-            >
-              <ul class="todo-list">
-                <li class="list-item">todo1</li>
-              </ul>
-              <span class="actions flex gap-x-1">
-                <img
-                  class="w-5 h-4 cursor-pointer"
-                  src="./images/check.svg"
-                  alt="completed"
-                />
-                <img
-                  class="w-4 h-4 cursor-pointer"
-                  src="./images/trash-can.svg"
-                  alt="delete"
-                />
-              </span>
-            </div>
-          </div>
-          <!-- insert todo -->
-          <div class="wrapper bg-white absolute bottom-0 w-full">
-            <div
-              class="insert-todo w-full flex border-t border-orange-500 justify-between items-center"
-            >
-              <input
-                type="text"
-                placeholder="Enter todo"
-                class="insert--input outline-none pl-1"
-                style="width: 12.5rem"
-              />
-              <button
-                class="add-btn active:bg-slate-300 border-l w-6 border-slate-600 flex justify-center items-center"
-                style="height: 26px"
-              >
-                <img class="w-4 h-4" src="./plus.svg" alt="add-todo" />
-              </button>
-            </div>
-          </div>
-        </section>
       </div>
     </main>
   </body>
