@@ -26,19 +26,24 @@ const whatSvg = document.querySelector('.what-svg');
 
 // generate random number
 
-const setRandom = Math.floor(Math.random() * 21);
-randomNumber.textContent = setRandom;
+const setRandom = function () {
+  randomNumber.textContent = Math.floor(Math.random() * 21);
+};
+
+setRandom();
 
 // this function will run if the guess is smaller than the random number
 
 function ifGuessSmall() {
   guideText.textContent = 'Number is too small please enter a bigger number';
+  guideText.style.color = 'rgb(247,64,64)';
 }
 
 // this function will run if the guess is higher than the random number
 
 const ifGuessBig = function () {
   guideText.textContent = 'Number is too big please enter a smaller number';
+  guideText.style.color = 'rgb(247,64,64)';
 };
 
 // if guess is true then this function will run
@@ -51,9 +56,11 @@ const ifGuessSuccess = function () {
   randomNumber.style.opacity = 1;
   guideText.style.color = 'green';
   currentScore.textContent = +currentScore.textContent + 1;
+  checkBtn.classList.add('workless');
+  checkInput.classList.add('workless');
+  checkInput.value = '';
+  restartBtn.classList.remove('stop-restart');
 };
-
-
 
 // compare number
 
@@ -65,17 +72,48 @@ const checkNumber = function () {
   // decrement current score
   currentValue -= 1;
   currentScore.textContent = currentValue;
-  if (+enteredNumber < setRandom) {
+  if (+enteredNumber < +randomNumber.textContent) {
     ifGuessSmall();
-  } else if (+enteredNumber > setRandom) {
+  } else if (+enteredNumber > +randomNumber.textContent) {
     ifGuessBig();
-  } else if (+enteredNumber === setRandom) {
+  } else if (+enteredNumber === +randomNumber.textContent) {
     ifGuessSuccess();
   }
 };
+
+/* restart the game  */ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//steps1: set the guide text to "start guessing a number between 0-20 and color to "
+
+// step2: remove the workless class to input and check btn
+
+// step3:  set the current scrore to 20
+
+// step4: opacity 0 to random number
+
+const restartGame = function () {
+  guideText.textContent = 'start guessing a number between 0-20';
+  guideText.style.color = 'rgb(37,37,37)';
+  checkBtn.classList.remove('workless');
+  checkInput.classList.remove('workless');
+  currentScore.textContent = 20;
+  randomNumber.style.opacity = 0;
+  restartBtn.classList.add('stop-restart');
+  whatSvg.style.opacity = 1;
+  currentValue = 20;
+  setRandom();
+};
+
+// ////////////////////////////////////////////////////////////////////////////////////////
 
 // event handlers
 
 checkBtn.addEventListener('click', () => {
   checkNumber();
+});
+
+// restart handler
+
+restartBtn.addEventListener('click', () => {
+  restartGame();
 });
