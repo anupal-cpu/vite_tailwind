@@ -92,7 +92,7 @@ const checkNumber = function () {
 // step4: opacity 0 to random number
 
 const restartGame = function () {
-  guideText.textContent = 'start guessing a number between 0-20';
+  guideText.textContent = 'start guessing a number between 0-20. . .';
   guideText.style.color = 'rgb(37,37,37)';
   checkBtn.classList.remove('workless');
   checkInput.classList.remove('workless');
