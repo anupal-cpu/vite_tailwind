@@ -1,9 +1,5 @@
 import './style.css';
 import './index.scss';
-import questionSvg from './assets.js';
-// import ifGuessSuccess from './guessSuccess.js';
-// import guessSuccess from './guessSuccess.js';
-
 /* qestion-mark-place
 guide-text
 check-input
@@ -35,9 +31,9 @@ randomNumber.textContent = setRandom;
 
 // this function will run if the guess is smaller than the random number
 
-const ifGuessSmall = function () {
+function ifGuessSmall() {
   guideText.textContent = 'Number is too small please enter a bigger number';
-};
+}
 
 // this function will run if the guess is higher than the random number
 
@@ -57,7 +53,7 @@ const ifGuessSuccess = function () {
   currentScore.textContent = +currentScore.textContent + 1;
 };
 
-console.log(setRandom);
+
 
 // compare number
 
