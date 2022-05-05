@@ -2,62 +2,117 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./image/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" defer src="/main.js"></script>
-    <title>Vite App</title>
+    <title>Guess Number</title>
   </head>
   <body>
-    <main class="all--content flex justify-center items-center w-full h-screen">
-      Just to see new branch in github
-      <div class="w-60 h-80 container flex flex-col border border-slate-600">
-        <header class="heading w-full flex justify-center pt-2 items-center">
-          <h1 class="heading--text text-orange-500">TODO</h1>
+
         </header>
-        <!-- todos area -->
-        <section class="all--todo relative h-72 overflow-hidden">
-          <div class="todos flex flex-col px-2 pt-3 gap-y-2">
-            <!-- one todo -->
+        <!-- main area -->
+        <div class="activity--area flex justify-between">
+          <!-- interections -->
+          <section
+            class="interection-area flex flex-col rounded-lg w-[28rem] h-[21rem] px-4 gap-y-10"
+          >
+            <!-- question mark -->
             <div
-              class="todo flex justify-between items-center border border-orange-500 px-1"
+              class="question-mark w-full relative flex justify-center items-center pt-3"
             >
-              <ul class="todo-list">
-                <li class="list-item">todo1</li>
-              </ul>
-              <span class="actions flex gap-x-1">
+              <span
+                class="qestion-mark-place w-[4rem] h-[4rem] flex justify-center items-center rounded-lg relative"
+                style="
+                  background-image: radial-gradient(
+                    circle farthest-corner at 10% 20%,
+                    rgba(255, 229, 168, 1) 0%,
+                    rgba(251, 174, 222, 1) 100.7%
+                  );
+                "
+              >
+                <h1
+                  class="random-number absolute text text-3xl font-semibold text-gray-800 opacity-0"
+                >
+                  10
+                </h1>
                 <img
-                  class="w-5 h-4 cursor-pointer"
-                  src="./images/check.svg"
-                  alt="completed"
-                />
-                <img
-                  class="w-4 h-4 cursor-pointer"
-                  src="./images/trash-can.svg"
-                  alt="delete"
-                />
-              </span>
+                  class="what-svg w-[3rem] h-[3rem]"
+                  src="./image/question_mark.svg"
+                  alt="qestion-num"
+              /></span>
+              <div
+                class="line w-[26rem] absolute bg-violet-800 -z-10 h-[2px]"
+              ></div>
             </div>
-          </div>
-          <!-- insert todo -->
-          <div class="wrapper bg-white absolute bottom-0 w-full">
             <div
-              class="insert-todo w-full flex border-t border-orange-500 justify-between items-center"
+              class="direction-area w-full flex justify-center items-center break-words"
+            >
+              <h1 class="guide-text text-sm font-sans " style='color: rgb(37, 37, 37);'>
+                Start guessing a number between 0-20. . .
+              </h1>
+            </div>
+            <!-- player name and id -->
+            <div
+              class="name-and-id flex w-full justify-center items-center gap-x-3"
+            >
+              <span
+                class="player-name w-[13rem] border-2 border-violet-800 flex justify-center items-center py-2 rounded-lg"
+                ><h1>Anupal nath</h1></span
+              >
+              <span
+                class="player-id w-[13rem] border-2 border-violet-800 flex justify-center items-center py-2 rounded-lg"
+                >UI230964</span
+              >
+            </div>
+
+            <!-- button check and input -->
+            <div
+              class="btncheck-and-input flex justify-center items-center gap-x-3 w-full"
             >
               <input
-                type="text"
-                placeholder="Enter todo"
-                class="insert--input outline-none pl-1"
-                style="width: 12.5rem"
+                type="number"
+                class="check-input rounded-lg w-[12.5rem] h-[4rem] outline-1 outline-violet-800 text-2xl pl-2"
               />
               <button
-                class="add-btn active:bg-slate-300 border-l w-6 border-slate-600 flex justify-center items-center"
-                style="height: 26px"
+                class="btn-check w-[12.5rem] text-white bg-violet-700 h-[4rem] rounded-lg text-xl active:scale-[0.98]"
               >
-                <img class="w-4 h-4" src="./plus.svg" alt="add-todo" />
+                Check number
               </button>
             </div>
-          </div>
-        </section>
+          </section>
+          <!-- scores -->
+
+          <section class="scores flex flex-col gap-y-4">
+            <!-- high score -->
+            <div
+              class="high-score w-[9rem] h-[7rem] rounded-lg relative flex justify-center items-center"
+            >
+              <h1 class="high--score-num text-lg">0</h1>
+              <h2
+                class="high--score-text absolute bottom-4 text-lg font-semibold text-gray-700"
+              >
+                High score
+              </h2>
+              <!-- current score -->
+            </div>
+            <div
+              class="current-score w-[9rem] h-[7rem] rounded-lg relative flex justify-center items-center"
+            >
+              <h1 class="current--score-num text-lg">20</h1>
+              <h2
+                class="current--score-text absolute bottom-4 text-lg font-semibold text-gray-700"
+              >
+                Current score
+              </h2>
+            </div>
+            <!-- restart btn -->
+            <button
+              class="restart-btn stop-restart w-[9rem] h-[5rem] rounded-lg text-lg text-gray-700 font-semibold flex justify-center items-center active:scale-[0.98]"
+            >
+              Restart
+            </button>
+          </section>
+        </div>
       </div>
     </main>
   </body>
